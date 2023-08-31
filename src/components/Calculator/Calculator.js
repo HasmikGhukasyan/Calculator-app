@@ -34,7 +34,7 @@ const Calculator = () => {
                             <CalculatorItem text="&#51;" />
                         </div>
                         <div className="operations">
-                            <CalculatorItem text="&#48;" />
+                            <CalculatorItem text="&#48;" className="zero-btn"/>
                             <CalculatorItem className="bullet-sign" text="&#8729;" />
                         </div>
                     </div>

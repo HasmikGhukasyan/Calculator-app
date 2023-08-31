@@ -4,7 +4,7 @@
     align-items: center;
     flex: 1;
     height: 64px;
-    width: 64px;
+    min-width: 64px;
     font-size: 24px;
     font-weight: bold;
     border: 1px solid #001E34;
