@@ -1,0 +1,22 @@
+.calcItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 64px;
+    width: 64px;
+    font-size: 24px;
+    font-weight: bold;
+    border: 1px solid #001E34;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    color: white;
+}
+
+.calcItem:hover {
+    background-color: white;
+    color: #001E34;
+    ;
+
+}
