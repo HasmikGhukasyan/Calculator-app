@@ -8,29 +8,26 @@ class Calculator extends Component {
     isEqualActive: false,
   };
 
-  clickHandler = (whichElement = "") => {
+  clickHandler = (whichClicked) => {
     if (this.state.isEqualActive) {
-      this.setState({ result: whichElement, isEqualActive: false });
+      this.setState({ result: "" + whichClicked, isEqualActive: false });
     } else {
       this.setState({
-        result: this.state.result + whichElement,
+        result: this.state.result + whichClicked,
         isEqualActive: false,
       });
     }
   };
-
   clearHandler = () => {
     this.setState({ result: "" });
   };
-
-  equalHandler = () => {
-    this.setState({ result: eval(this.state.result), isEqualActive: true });
-  };
-
   backHandler = () => {
     this.setState({
       result: this.state.result.slice(0, this.state.result.length - 1),
     });
+  };
+  equalHandler = () => {
+    this.setState({ result: eval(this.state.result), isEqualActive: true });
   };
   render() {
     return (
@@ -41,8 +38,8 @@ class Calculator extends Component {
         <div className="count-container">
           <div className="operations">
             <CalculatorItem
-              text="&#67;"
               onClick={this.clearHandler}
+              text="&#67;"
               className="green-text"
             />
             <CalculatorItem
@@ -62,36 +59,36 @@ class Calculator extends Component {
             />
           </div>
           <div className="operations">
-            <CalculatorItem text="7" onClick={() => this.clickHandler(7)} />
-            <CalculatorItem text="8" onClick={() => this.clickHandler(8)} />
-            <CalculatorItem text="9" onClick={() => this.clickHandler(9)} />
+            <CalculatorItem onClick={() => this.clickHandler(7)} text="7" />
+            <CalculatorItem onClick={() => this.clickHandler(8)} text="8" />
+            <CalculatorItem onClick={() => this.clickHandler(9)} text="9" />
             <CalculatorItem
-              text="&#8722;"
               onClick={() => this.clickHandler("-")}
+              text="&#8722;"
               className="purple-text"
             />
           </div>
           <div className="operations">
-            <CalculatorItem text="4" onClick={() => this.clickHandler(4)} />
-            <CalculatorItem text="5" onClick={() => this.clickHandler(5)} />
-            <CalculatorItem text="6" onClick={() => this.clickHandler(6)} />
+            <CalculatorItem onClick={() => this.clickHandler(4)} text="4" />
+            <CalculatorItem onClick={() => this.clickHandler(5)} text="5" />
+            <CalculatorItem onClick={() => this.clickHandler(6)} text="6" />
             <CalculatorItem
-              text="&#43;"
               onClick={() => this.clickHandler("+")}
+              text="&#43;"
               className="purple-text"
             />
           </div>
           <div className="oper-structured">
             <div>
               <div className="operations">
-                <CalculatorItem text="1" onClick={() => this.clickHandler(1)} />
-                <CalculatorItem text="2" onClick={() => this.clickHandler(2)} />
-                <CalculatorItem text="3" onClick={() => this.clickHandler(3)} />
+                <CalculatorItem onClick={() => this.clickHandler(1)} text="1" />
+                <CalculatorItem onClick={() => this.clickHandler(2)} text="2" />
+                <CalculatorItem onClick={() => this.clickHandler(3)} text="3" />
               </div>
               <div className="operations">
                 <CalculatorItem
-                  text="0"
                   onClick={() => this.clickHandler(0)}
+                  text="0"
                   className="zero-btn"
                 />
                 <CalculatorItem
